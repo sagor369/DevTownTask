@@ -1,27 +1,23 @@
-import { FaRegBookmark } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import AllProducts from "./AllProducts";
 
 const Home = () => {
+  const [products, setProducts] = useState([])
+  useEffect(()=>{
+    fetch('http://localhost:5000/products')
+    .then(res => res.json())
+    .then(data => setProducts(data.data))
+  },[])
   return (
-    <div className="my-32">
-      <div className="card w-96 bg-primary bg-opacity-25 shadow-xl">
-        <figure>
-          <img
-            src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-            alt="Shoes"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            Shoes!
-            <div className="badge badge-secondary">NEW</div>
-          </h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-ghost"><FaRegBookmark className="w-6 h-6"/></button>
-            <button className="btn btn-primary">Buy</button>
-          </div>
-        </div>
-      </div>
+    <div className="my-32 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 ">
+      {
+        products.map(product => 
+        <AllProducts
+        key={product._id}
+        product = {product}
+        ></AllProducts>)
+      }
+      
     </div>
   );
 };
