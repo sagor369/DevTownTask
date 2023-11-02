@@ -21,7 +21,7 @@ const Home = () => {
   };
 
 
-  // filter data code 
+  // filter category data code 
   const filterData = (category) =>{
     fetch(`http://localhost:5000/product/${category}`)
       .then((res) => res.json())
@@ -30,10 +30,19 @@ const Home = () => {
         setCurrentPageData(fastData);
         setProducts(data.data);
       });
-    console.log(products)
+  } 
 
-    
 
+  // filter price data code 
+  const priceData = (price) =>{
+    console.log(price)
+    fetch(`http://localhost:5000/product/${price}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const fastData = data.data?.slice(0, perPage);
+        setCurrentPageData(fastData);
+        setProducts(data.data);
+      });
   } 
     
   
@@ -55,8 +64,9 @@ console.log(products)
         products= {products}
         setProducts={setProducts}
         pageHandle={pageHandle}
-        currentPage={currentPage}
+        
         filterData = {filterData}
+        priceData={priceData}
         ></SortPage>
       </div>
       <div className=" grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 ">
