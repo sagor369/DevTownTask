@@ -36,13 +36,16 @@ const Home = () => {
   // filter price data code 
   const priceData = (price) =>{
     console.log(price)
-    fetch(`http://localhost:5000/product/${price}`)
+    fetch(`http://localhost:5000/productPrice/${price}`)
       .then((res) => res.json())
       .then((data) => {
-        const fastData = data.data?.slice(0, perPage);
-        setCurrentPageData(fastData);
-        setProducts(data.data);
-      });
+        if(data?.data){
+          console.log(data)
+          const fastData = data?.data?.slice(0, perPage);
+          setCurrentPageData(fastData);
+          setProducts(data?.data)
+        }
+      })
   } 
     
   
