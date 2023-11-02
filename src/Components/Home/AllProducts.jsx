@@ -1,9 +1,27 @@
 import { FaRegBookmark } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const AllProducts = ({product}) => {
-    console.log(product)
-    const {img, name, price,ratings,description, stock, _id} = product
+    const {img, name, price,ratings,description,_id} = product
+
+    const buyHandle = () =>{
+      Swal.fire({
+        title: 'Do you want to buy product?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `Don't save`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          Swal.fire('Product Buy Successfull', '', 'success')
+        } else if (result.isDenied) {
+          Swal.fire('Changes are not saved', '', 'info')
+        }
+      })
+    }
+
     return (
         <div className="card w-96 bg-primary bg-opacity-25 shadow-xl">
         <figure>
@@ -22,8 +40,7 @@ const AllProducts = ({product}) => {
           <p className="font-bold">Price: {price}Tk</p>
           </div>
           <div className="card-actions justify-end">
-            <button className="btn btn-ghost"><FaRegBookmark className="w-6 h-6"/></button>
-            <button className="btn btn-primary ">Buy</button>
+            <button onClick={buyHandle} className="btn btn-primary ">Buy</button>
           </div>
         </div>
       </div>
