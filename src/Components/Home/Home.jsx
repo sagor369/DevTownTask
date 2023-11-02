@@ -23,7 +23,7 @@ const Home = () => {
 
   // filter category data code 
   const filterData = (category) =>{
-    fetch(`http://localhost:5000/product/${category}`)
+    fetch(`https://dev-town-server-sagor369.vercel.app/product/${category}`)
       .then((res) => res.json())
       .then((data) => {
         const fastData = data.data?.slice(0, perPage);
@@ -36,7 +36,7 @@ const Home = () => {
   // filter price data code 
   const priceData = (price) =>{
     console.log(price)
-    fetch(`http://localhost:5000/productPrice/${price}`)
+    fetch(`https://dev-town-server-sagor369.vercel.app/productPrice/${price}`)
       .then((res) => res.json())
       .then((data) => {
         if(data?.data){
@@ -51,7 +51,7 @@ const Home = () => {
   
 
   useEffect(() => {
-    fetch("http://localhost:5000/products")
+    fetch("https://dev-town-server-sagor369.vercel.app/products")
       .then((res) => res.json())
       .then((data) => {
         const fastData = data.data?.slice(0, perPage);
