@@ -1,5 +1,6 @@
 # DevTown E-commerce
 - Project Live site link:  [Project Link](https://dev-town-task-sooty.vercel.app/)
+- Project server site [Github link](https://github.com/sagor369/DevTwon-server)
 
 ### Project Technology List
 - React.Js
@@ -14,7 +15,7 @@
 
 
 ### Deployment Host 
-My project deployment Vercel Deploy Client site and server site both deploy 
+My project deployment [Vercel Deploy]() Client site and server site both deploy 
 
 #### Description 
 I made this site user friendly. there if the user wants, he can do category was filtering and price was filtering Here if the user wants to  click the sort by button  he con sort and i have sorted by price . I have made this project fully resposive so that any user can use the site .
