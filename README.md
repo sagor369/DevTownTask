@@ -1,8 +1,20 @@
-# React + Vite
+# DevTown E-commerce
+- Project Live site link:  [Project Link](https://dev-town-task-sooty.vercel.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Project Technology List
+- React.Js
+- React Router
+- React-icons
+- react-particles
+- react-router-dom
+- sweetalert2
+- tsparticles-slim
+- tailwindcss
+- daisyui
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Deployment Host 
+My project deployment Vercel Deploy Client site and server site both deploy 
+
+#### Description 
+I made this site user friendly. there if the user wants, he can do category was filtering and price was filtering Here if the user wants to  click the sort by button  he con sort and i have sorted by price . I have made this project fully resposive so that any user can use the site .

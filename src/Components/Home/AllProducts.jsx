@@ -23,7 +23,7 @@ const AllProducts = ({product}) => {
     }
 
     return (
-        <div className="card w-96 bg-primary bg-opacity-25 shadow-xl">
+        <div className="card  bg-primary bg-opacity-25 shadow-xl">
         <figure>
           <img className="h-60 w-full"
             src={img}

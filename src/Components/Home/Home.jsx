@@ -8,7 +8,7 @@ const Home = () => {
   const [currentPageData, setCurrentPageData] = useState([]);
   
   // pagination function
-  const perPage = 6;
+  const perPage = 9;
   const totalPage = Math.ceil(products?.length / perPage);
   const pageNumber = [...Array(totalPage)?.keys()];
 
